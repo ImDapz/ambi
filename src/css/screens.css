@@ -1,0 +1,71 @@
+/* =============================================
+   screens.css — Screen transitions & shared layout
+   ============================================= */
+
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 28px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s ease;
+}
+
+.screen.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.screen.slide-in {
+  animation: slideIn 0.45s cubic-bezier(.22,.68,0,1.2) forwards;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(28px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+
+/* Letter screen: top-aligned bukan center */
+.screen-letter {
+  justify-content: flex-start;
+  padding-top: 48px;
+}
+
+/* ── Music button (pojok kanan atas setiap screen) ─────────────────── */
+.music-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgba(30,77,183,0.25);
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 100;
+  font-size: 18px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 10px rgba(30,77,183,0.12);
+}
+
+.music-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 16px rgba(30,77,183,0.22);
+}
+
+.music-btn.playing {
+  animation: musicPulse 2s ease-in-out infinite;
+}
+
+@keyframes musicPulse {
+  0%,100% { box-shadow: 0 2px 10px rgba(30,77,183,0.12); }
+  50%     { box-shadow: 0 2px 20px rgba(30,77,183,0.35); }
+}

@@ -1,0 +1,60 @@
+/* =============================================
+   base.css — Reset, variabel, phone frame
+   ============================================= */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  --blue-dark:  #1a3a6b;
+  --blue-btn:   #1e4db7;
+  --text-dark:  #1a3a6b;
+  --bg:         #f0f5ff;
+  --font:       'Nunito', sans-serif;
+  --radius:     18px;
+  --radius-btn: 30px;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  font-family: var(--font);
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e8f0fe 0%, #f5f8ff 50%, #e0ecff 100%);
+}
+
+/* ── Phone frame ─────────────────────────────────────────────────── */
+.phone-frame {
+  width: 430px;
+  max-width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+  /* Grid lines background */
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent, transparent 27px,
+      rgba(200,220,255,0.25) 27px, rgba(200,220,255,0.25) 28px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent, transparent 27px,
+      rgba(200,220,255,0.25) 27px, rgba(200,220,255,0.25) 28px
+    );
+}

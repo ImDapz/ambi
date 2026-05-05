@@ -1,0 +1,43 @@
+/* =============================================
+   particles.css — Confetti & floating hearts
+   ============================================= */
+
+/* ── Confetti (screen transisi) ───────────────────────────────────── */
+.confetti-wrap {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.confetti-item {
+  position: absolute;
+  top: -30px;
+  animation: confettiFall linear forwards;
+  font-size: 20px;
+}
+
+@keyframes confettiFall {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0.1;
+  }
+}
+
+/* ── Floating hearts (screen letter) ──────────────────────────────── */
+.floating-hearts-wrap {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.heart-float {
+  position: absolute;
+  animation: heartRain linear forwards;
+}
+
+@keyframes heartRain {
+  0%   { transform: translateY(-30px) rotate(-10deg); opacity: 0.85; }
+  100% { transform: translateY(110vh)  rotate(30deg);  opacity: 0; }
+}

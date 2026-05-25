@@ -15,11 +15,13 @@
 let _bgAudio = null
 let _playing  = false
 let _fadeTimer = null
+const MUSIC_START_SEC = 0 // ← ganti angka ini, misal 185 = detik ke 3:05
 
 // ── Init: buat elemen audio + connect ke bgMusic ───────────────────
 // File /public/bgMusic.mp3 — taruh mp3 kamu di sini
 export function initMusic() {
   _bgAudio = new Audio('/bgMusic.mp3')
+  _bgAudio.currentTime = MUSIC_START_SEC
   _bgAudio.loop   = true
   _bgAudio.volume = 0.7
 
@@ -27,7 +29,7 @@ export function initMusic() {
     console.info('[music] bgMusic.mp3 tidak ada — musik dinonaktifkan')
     _bgAudio = null
   })
-}
+}  
 
 // ── Play / pause ────────────────────────────────────────────────────
 export function setMusicPlaying(on) {

@@ -5,17 +5,17 @@
    ============================================= */
 
 // ── PIN password (format: DDMMYY) ──────────────────────────────────
-export const CORRECT_PIN = '1937284650'
+export const CORRECT_PIN = '00'
 
 // ── GIF Capoo dari Giphy ────────────────────────────────────────────
 export const GIFS = {
-  password: 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2gzZmZnMXVsNWJsNHdoeWY4dGFpZm1uY3lycG9oNWxnY2pydGY2ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Rd6sn03ncIKHrfzcci/giphy.gif',
-  hi:       'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3ZxdzBncGU3cWtkMGRiaWVzYnEybzJ2aGZjeXBlcGF1NnF4ZnFtZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/hA0OYhjYRgjMQcAqlS/giphy.gif',
-  ready:    'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWE2cGttaGc5NWVteGZyYjZwOG1qNnVlYmV1bDJneGVzMjZ6aHBqcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/RkDDt7sMZrZFNpJqOV/giphy.gif',
-  mad:      'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2Rsa2o5Z3J1OHlka3l2eDRuaW94aHg1bml0dGQxdzJjc3E3eWVsdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/26BRzQS5HXcEWVJQQ/giphy.gif',
-  birthday: 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2Jzb3p4cHNkZjF3NmEzYmltejgybHJ6cGN2bHlyNHBobnhvcGpicyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/g9582DNuQppxC/giphy.gif',
-  love:     'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExamFoYWs5ZjgyazJ0bm9lMnlpNXBpbnlheXg2aTg1aHN5cGNrYmNqZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VbnUQpnihPSIgIXuZv/giphy.gif',
-  last:     'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzdna2poOGxnM3NkNG14aHpzeW01bXNnZHc1c3A2czg2aWlrZGJkaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/LmNwrBhejkK9EFP504/giphy.gif',
+  password: 'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExemVkZnI4N29pbWVlazFra2ExZmp5amY0eDRqeTNxYmw3OWNwcHpiNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/fjxupFeOlzwRnhKT0b/giphy.gif',
+  hi:       'https://media.giphy.com/media/xUPGcGzMdaaTX13PfW/giphy.gif',
+  ready:    'https://media.tenor.com/nQGkHDj38ucAAAAi/cat-bugcat.gif',
+  mad:      'https://media.tenor.com/aFhWic8AkNUAAAAi/h%E1%BB%A9-gi%E1%BA%ADn.gif',
+  birthday: 'https://media.tenor.com/8oRk0EBWv1AAAAAj/bugcat-capoo.gif',
+  love:     'https://media.tenor.com/x-xfvBmLgDoAAAAi/tkthao219-capoo.gif',
+  last:     'https://i.pinimg.com/originals/29/4d/93/294d93123bae16823d7eef3c70ee0c31.gif',
 }
 
 // ── Spotify playlist ────────────────────────────────────────────────
@@ -48,3 +48,8 @@ export const KEY_PITCH = {
   8: 2.828,
   9: 4.000,
 }
+
+
+
+
+

@@ -13,14 +13,15 @@ import { goTo }               from '../router.js'
 import { playKeySound, triggerKeyBounce } from '../modules/sound.js'
 
 // ── State lokal screen ini ──────────────────────────────────────────
+const PIN_LENGTH = CORRECT_PIN.length  // otomatis = 10
 let _pin = ''
 
 // ── HTML template ───────────────────────────────────────────────────
+
 export function buildScreen1() {
-  const dots = [0,1,2,3,4,5].map(i =>
+  const dots = Array.from({ length: PIN_LENGTH }, (_, i) =>
     `<div class="pin-dot" id="dot-${i}"></div>`
   ).join('')
-
   const keys = [1,2,3,4,5,6,7,8,9].map(n =>
     `<button class="num-key" data-key="${n}">${n}</button>`
   ).join('')
@@ -69,53 +70,38 @@ export function initScreen1() {
 
 // ── Logic ────────────────────────────────────────────────────────────
 function _handleInput(n, btn) {
-  if (_pin.length >= 6) return
-
+  if (_pin.length >= PIN_LENGTH) return
   triggerKeyBounce(btn)
   playKeySound(n)
-
   _pin += n
   _updateDots()
-
-  if (_pin.length === 6) {
-    setTimeout(_checkPin, 150)
-  }
+  if (_pin.length === PIN_LENGTH) setTimeout(_checkPin, 150)
 }
 
 function _handleBackspace(btn) {
   triggerKeyBounce(btn)
-  playKeySound(3)             // nada rendah untuk backspace
+  playKeySound(3)
   _pin = _pin.slice(0, -1)
   _updateDots()
 }
 
 function _checkPin() {
   if (_pin === CORRECT_PIN) {
-    _pin = ''
-    _updateDots()
-    goTo(2)
+    _pin = ''; _updateDots(); goTo(2)
   } else {
-    _shakeDots()
-    _pin = ''
-    setTimeout(_updateDots, 500)
+    _shakeDots(); _pin = ''; setTimeout(_updateDots, 500)
   }
 }
 
 function _updateDots() {
-  for (let i = 0; i < 6; i++) {
-    document.getElementById(`dot-${i}`)
-      ?.classList.toggle('filled', i < _pin.length)
-  }
+  for (let i = 0; i < PIN_LENGTH; i++)
+    document.getElementById(`dot-${i}`)?.classList.toggle('filled', i < _pin.length)
 }
 
 function _shakeDots() {
   document.querySelectorAll('.pin-dot').forEach(d => {
-    d.style.animation = 'none'
-    void d.offsetHeight
+    d.style.animation = 'none'; void d.offsetHeight
     d.style.animation = 'dotShake 0.4s ease'
   })
-  setTimeout(() =>
-    document.querySelectorAll('.pin-dot')
-      .forEach(d => d.style.animation = ''), 500
-  )
+  setTimeout(() => document.querySelectorAll('.pin-dot').forEach(d => d.style.animation = ''), 500)
 }

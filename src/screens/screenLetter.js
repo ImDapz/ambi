@@ -33,7 +33,7 @@ export function buildScreenLetter() {
 
 // ── Dipanggil oleh router saat screen ini aktif ─────────────────────
 export function startLetter() {
-  fadeMusicOut(1500)
+  //fadeMusicOut(1500)
   setTimeout(_startTyping, 300)
   spawnHearts('hearts-wrap', 40)
 }

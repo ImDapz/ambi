@@ -20,11 +20,9 @@ export const GIFS = {
 
 // ── Spotify playlist ────────────────────────────────────────────────
 export const PLAYLIST = [
-  { title: "Love Story (Taylor's Version)", artist: 'Taylor Swift', dur: '3:55' },
-  { title: 'My Love Mine All Mine',         artist: 'Mitski',       dur: '2:17' },
-  { title: "Mine (Taylor's Version)",       artist: 'Taylor Swift', dur: '3:51' },
-]
-
+  "love.-w2e.mp3",
+  "bgMusic.mp3"
+ ]
 // ── Teks surat / birthday letter ────────────────────────────────────
 export const LETTER_TEXT = `On your special day, I just want to remind you how grateful I am to have you in my life. Thank you for being the amazing person you are—kind, loving, and always making everything feel a little warmer just by being around.
 

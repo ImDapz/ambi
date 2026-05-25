@@ -35,7 +35,7 @@ export function triggerTransition13() {
 
   // Efek
   spawnConfetti('confetti-wrap')
-  fadeMusicOut(1500)
+  //fadeMusicOut(1500)
 
   // Auto lanjut ke our-song
   setTimeout(() => goTo('our-song'), 3500)

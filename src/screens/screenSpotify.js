@@ -10,7 +10,7 @@ let audio = null
 
 // ================== CONFIG PATH ==================
 // Ubah ini kalau mau ambil langsung dari public/ tanpa folder music/
-const MUSIC_BASE_PATH = '/public'   // ganti jadi '/' kalau mau langsung dari public/
+const MUSIC_BASE_PATH = '/'   // ganti jadi '/' kalau mau langsung dari public/
 
 function parseFilename(filename) {
   let name = filename.replace('.mp3', '').replace(/\./g, ' ').trim()

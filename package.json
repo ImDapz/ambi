@@ -10,5 +10,8 @@
   },
   "devDependencies": {
     "vite": "^8.0.10"
+  },
+  "dependencies": {
+    "jsmediatags": "^3.9.7"
   }
 }

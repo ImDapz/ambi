@@ -4,6 +4,7 @@
 
 import { PLAYLIST } from '../config.js'
 import { getGlobalAudio } from '../modules/music.js'
+import jsmediatags from 'jsmediatags'
 
 let currentTrack = 0
 let audio = null
@@ -12,18 +13,74 @@ let audio = null
 // Ubah ini kalau mau ambil langsung dari public/ tanpa folder music/
 const MUSIC_BASE_PATH = '/'   // ganti jadi '/' kalau mau langsung dari public/
 
-function parseFilename(filename) {
-  let name = filename.replace('.mp3', '').replace(/\./g, ' ').trim()
-  
-  // Coba pisah Artist - Title
-  const parts = name.split(/\s+-\s+/)
-  if (parts.length > 1) {
-    return { title: parts[1], artist: parts[0] }
+function fallbackMeta(filename) {
+  return {
+    title: filename.replace('.mp3', ''),
+    artist: 'Unknown Artist'
   }
-  
-  return { 
-    title: name, 
-    artist: "Unknown Artist" 
+}
+
+
+let trackMeta = {}
+
+async function readMetadata(file) {
+  try {
+    const response = await fetch(MUSIC_BASE_PATH + file)
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch ${file}`)
+    }
+
+    const buffer = await response.arrayBuffer()
+
+    return await new Promise((resolve) => {
+      jsmediatags.read(buffer, {
+        onSuccess: (tag) => {
+          const tags = tag.tags
+
+          let coverUrl = '/cover.jpg'
+
+          if (tags.picture) {
+            const { data, format } = tags.picture
+
+            const byteArray = new Uint8Array(data)
+
+            const blob = new Blob(
+              [byteArray],
+              { type: format }
+            )
+
+            coverUrl = URL.createObjectURL(blob)
+          }
+
+          resolve({
+            title: tags.title || file.replace('.mp3', ''),
+            artist: tags.artist || 'Unknown Artist',
+            album: tags.album || '',
+            cover: coverUrl
+          })
+        },
+
+        onError: (error) => {
+          console.log('Metadata read error:', error)
+
+          resolve({
+            title: file.replace('.mp3', ''),
+            artist: 'Unknown Artist',
+            cover: '/cover.jpg'
+          })
+        }
+      })
+    })
+
+  } catch (err) {
+    console.log('Fetch metadata failed:', err)
+
+    return {
+      title: file.replace('.mp3', ''),
+      artist: 'Unknown Artist',
+      cover: '/cover.jpg'
+    }
   }
 }
 
@@ -77,9 +134,17 @@ export function buildScreenSpotify() {
 export function initScreenSpotify() {
   audio = getGlobalAudio()
 
-  renderTracklist()
-  loadTrack(currentTrack)
+  loadAllMetadata().then(() => {
+    renderTracklist()
+    loadTrack(currentTrack)
+  })
+  async function loadAllMetadata() {
+    for (const file of PLAYLIST) {
+      trackMeta[file] = await readMetadata(file)
+    }
+  }
 
+  
   document.addEventListener('click', handleClick)
   audio.addEventListener('timeupdate', updateProgress)
   audio.addEventListener('ended', nextTrack)
@@ -88,7 +153,7 @@ export function initScreenSpotify() {
 function renderTracklist() {
   const container = document.getElementById('tracklist')
   container.innerHTML = PLAYLIST.map((file, i) => {
-    const info = parseFilename(file)
+    const info = trackMeta[file] || fallbackMeta(file)
     return `
       <div class="sp-track ${i === currentTrack ? 'active' : ''}" data-index="${i}">
         <span class="track-number">${i + 1}</span>
@@ -103,19 +168,24 @@ function renderTracklist() {
 
 function loadTrack(index) {
   currentTrack = index
-  const file = PLAYLIST[index]
-  const info = parseFilename(file)
 
-  // Path audio
+  const file = PLAYLIST[index]
+  const info = trackMeta[file] || fallbackMeta(file)
+
   audio.src = MUSIC_BASE_PATH + file
 
   document.getElementById('now-title').textContent = info.title
   document.getElementById('now-artist').textContent = info.artist
 
+  document.getElementById('big-cover').src =
+    info.cover || '/cover.jpg'
+  
+  document.getElementById('mini-cover').src =
+    info.cover || '/cover.jpg'
+
   renderTracklist()
 
-  // Auto play
-  audio.play().catch(err => console.log("Play prevented:", err))
+  audio.play().catch(err => console.log(err))
 }
 
 function handleClick(e) {
@@ -168,4 +238,13 @@ function formatTime(secs) {
   const m = Math.floor(secs / 60)
   const s = Math.floor(secs % 60)
   return `${m}:${s < 10 ? '0' : ''}${s}`
+}
+
+
+async function loadAllMetadata() {
+  for (const file of PLAYLIST) {
+    trackMeta[file] = await readMetadata(file)
+
+    console.log('META:', trackMeta[file])
+  }
 }

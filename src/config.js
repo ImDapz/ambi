@@ -20,7 +20,7 @@ export const GIFS = {
 
 // ── Spotify playlist ────────────────────────────────────────────────
 export const PLAYLIST = [
-  "love.-w2e.mp3",
+  "love.mp3",
   "bgMusic.mp3"
  ]
 // ── Teks surat / birthday letter ────────────────────────────────────

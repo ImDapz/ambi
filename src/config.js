@@ -20,17 +20,23 @@ export const GIFS = {
 
 // ── Spotify playlist ────────────────────────────────────────────────
 export const PLAYLIST = [
-  "love.mp3",
-  "bgMusic.mp3"
+  "Bestpart.mp3",
+  "love..mp3"
  ]
 // ── Teks surat / birthday letter ────────────────────────────────────
-export const LETTER_TEXT = `On your special day, I just want to remind you how grateful I am to have you in my life. Thank you for being the amazing person you are—kind, loving, and always making everything feel a little warmer just by being around.
+export const LETTER_TEXT = `happy sweet seventeen baebae risma
 
-I hope this new year of your life brings you happiness, peace, and all the good things you've been wishing for. May every step you take feel lighter, and may you always be surrounded by love and people who truly care about you. You deserve so much more than you know.
+finally kamu dah berusia 17 tahun yang dimana katanya umur yang spesial banget njayy.
 
-I love you endlessly, and I'll always be here for you — through every moment, big or small.
+Yaa disini aku pengen bilang makasih yaa baee. Makasih karena sampai hari ini kamu masih jadi salah satu alasan kenapa hari-hari aku terasa lebih berwarna. Makasih juga buat semua cerita, tawa, dan momen-momen kecil yang udah kita lewatin bareng. I love you baee.
 
-Happy 18th birthday, my love 🤍`
+oh yaa semoga di umur mu yang spesial ini kamu sehat sehat terus, bahagia terus, makin cantik ya walaupun udah cantik hehe, makin pinter, dan semua hal yang kamu harapkan bisa pelan-pelan tercapai yaa baee. Pokoknya semoga di umur mu yang 17 tahun ini menjadi tahun yang istimewa dan spesial buat kamu.
+
+Terakhir ini hal kebiasaan kamu yaa, pliss pola makan mu diatur jangan keseringan ga makan apalagi ga sarapan. Sesibuk apa pun kamu itu, jaga kesehatan tetap nomor satu. trus jangan terlalu capek juga yaa baee. aku tau kamu selalu berusaha ngelakuin yang terbaik buat banyak hal, terutama urusan sekolah ama osis mu itu. tapi yaa jangan lupa istirahat juga dan aku disini selalu menyemangati mu baee. trus jangan banyak sedih juga baee, kalo kamu lagi sedih jangan dipendem sendiri yaa. aku tau terkadang kamu lebih nyimpen semuanya sendirian dan berusaha keliatan baik baik aja. gapapa kalo capek, gapapa kalo sedih tapi yaa jangan terlalu keras ama diri sendiri baee. aku selalu ada disini buat kamu, buat dengerin cerita kamu, keluh kesah kamu, dan hal-hal random yang pengen kamu ceritain, jadi jangan ngerasa sendirian yaa baee.
+
+udah itu aja dari aku.
+
+happy sweet seventeen baebae risma, i love you moree`
 
 // ── Sound — pitch per angka numpad ─────────────────────────────────
 // 5 = base (1.0), naik ke 9, turun ke 0

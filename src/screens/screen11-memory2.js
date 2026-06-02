@@ -6,13 +6,18 @@ export function buildScreen11() {
     <button class="music-btn js-music-btn">🎵</button>
 
     <div class="photo-card">
-      <div class="photo-placeholder" style="background:linear-gradient(135deg,#ffe8d6,#ffd6e7);">
-        🌸
-      </div>
+              <img src="/photo2.jpeg" style="width:100%;height:305px;object-fit:cover;">
     </div>
 
-    <p class="title-bold" style="max-width:290px;">
-      I hope we keep creating<br>memories, big and small, together
+	<p class="title-big" style="font-size:19px;margin-bottom:10px;">
+      seorang yang penting lagi favorit
+    </p>
+
+    <p style="font-size:13px;font-weight:600;color:#4a6cb7;text-align:center;
+              line-height:1.7;max-width:280px;">
+      Sampai sekarang, potret tentang kamu<br>
+      masih memiliki tempat khusus<br>
+      di galeri dan ingatanku.
     </p>
 
     <button class="btn" style="margin-top:22px;" onclick="goTo(12)">

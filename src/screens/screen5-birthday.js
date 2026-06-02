@@ -12,8 +12,8 @@ export function buildScreen5() {
     </div>
 
     <p class="title-big" style="margin-top:8px;">
-      Today, this pretty girl turns 18!<br>
-      <span style="font-weight:700;font-size:17px;">happy birthday, my love 🤍</span>
+      Today, this pretty girl turns 17!<br>
+      <span style="font-weight:700;font-size:17px;">happy birthday, my bae 🤍</span>
     </p>
 
     <button class="btn" style="margin-top:20px;" onclick="goTo(6)">

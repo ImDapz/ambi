@@ -1,19 +1,5 @@
 /* =============================================
    main.js — Entry point
-
-   Tugas file ini HANYA:
-     1. Import CSS
-     2. Import semua screen builder
-     3. Render HTML ke #app
-     4. Init modul (sound, music, spotify)
-
-   CARA NONAKTIFKAN 1 SCREEN UNTUK DEBUG:
-     Komentar 1 baris import + 1 baris build
-     → screen itu hilang, sisanya tetap jalan
-
-   CARA NONAKTIFKAN SOUND:
-     Komentar import sound + initScreen1Sound()
-     → app tetap jalan tanpa suara
    ============================================= */
 
 // ── CSS (urutan penting) ────────────────────────────────────────────
@@ -38,7 +24,7 @@ import { buildScreen7               } from './screens/screen7-last.js'
 import { buildScreen9               } from './screens/screen9-memory1.js'
 import { buildScreen11              } from './screens/screen11-memory2.js'
 import { buildScreen12              } from './screens/screen12-world.js'
-import { buildScreen10              } from './screens/screen10memory3.js'
+import { buildScreen10              } from './screens/screen10-memory3.js'
 import { buildScreen13              } from './screens/screen13-transition.js'
 import { buildScreenOurSong         } from './screens/screenOurSong.js'
 import { buildScreenSpotify, initScreenSpotify } from './screens/screenSpotify.js'
@@ -68,6 +54,7 @@ function render() {
       ${buildScreen9()}
       ${buildScreen11()}
       ${buildScreen12()}
+      ${buildScreen10()}
       ${buildScreen13()}
       ${buildScreenOurSong()}
       ${buildScreenSpotify()}
@@ -78,20 +65,14 @@ function render() {
 
 // ── Init event listeners ─────────────────────────────────────────────
 function initEvents() {
-  // Screen 1: numpad
   initScreen1()
-
-  // Spotify controls
   initScreenSpotify()
 
-  // Music button (semua screen pakai class .js-music-btn)
-  // Pakai event delegation dari phone-frame
   document.querySelector('.phone-frame')
     ?.addEventListener('click', e => {
       if (e.target.closest('.js-music-btn')) {
         const nowPlaying = !isPlaying()
         setMusicPlaying(nowPlaying)
-        // Update semua music-btn yang visible
         document.querySelectorAll('.js-music-btn').forEach(btn => {
           btn.textContent = nowPlaying ? '🎵' : '▶'
           btn.classList.toggle('playing', nowPlaying)
@@ -104,13 +85,11 @@ function initEvents() {
 render()
 initEvents()
 
-// Sound & music init setelah interaksi pertama (browser autoplay policy)
 document.addEventListener('click', () => {
   initSound()
   initMusic()
   setMusicPlaying(true)
 
-  // Update semua music btn ke playing state
   document.querySelectorAll('.js-music-btn').forEach(btn => {
     btn.textContent = '🎵'
     btn.classList.add('playing')

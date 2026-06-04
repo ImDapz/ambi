@@ -5,9 +5,12 @@ export function buildScreen11() {
   <div id="screen-11" class="screen">
     <button class="music-btn js-music-btn">🎵</button>
 
-    <div class="photo-card">
-              <img src="/photo3.jpeg" style="width:100%;height:305px;object-fit:cover;">
-    </div>
+    <div class="photo-card" style="height:355px;">
+    	  <img src="/photo3.jpeg" 
+    	       style="width:100%; height:100%; display:block; 
+    	              object-fit:cover; object-position: center 30%;">
+	</div>
+
 
 	<p class="title-big" style="font-size:19px;margin-bottom:10px;">
      Ini favorit ku juga

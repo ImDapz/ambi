@@ -5,20 +5,18 @@ export function buildScreen10() {
   <div id="screen-10" class="screen">
     <button class="music-btn js-music-btn">🎵</button>
 
-    <div class="photo-card" style="height:300px;">
-      <img src="/photo4.jpeg"
-           style="width:100%; height:100%; display:block;
-                  object-fit:cover; object-position: center 30%;">
-    </div>
+    <img src="/photo4.png"
+         style="width: 80%; height: 300px; display: block;
+                object-fit: cover; object-position: center 30%;">
 
     <p class="title-big" style="font-size:19px;margin-bottom:10px;">
-      judul foto
+    In the end
     </p>
 
     <p style="font-size:13px;font-weight:600;color:#4a6cb7;text-align:center;
               line-height:1.7;max-width:280px;">
-      tulis caption disini
-    </p>
+               yash itu tiga kategori foto favorit aku, but sebenarnya semua foto dari kamu itu favorit aku semua baee
+          </p>
 
     <button class="btn" style="margin-top:22px;" onclick="goTo('letter-transition')">
       klik ini &lt;3

@@ -12,7 +12,4 @@ export default defineConfig({
       external: ['react-native-fs']
     }
   },
-  optimizeDeps: {
-    exclude: ['jsmediatags']
-  }
 })

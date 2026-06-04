@@ -3,7 +3,7 @@
    ============================================= */
 
 // ── PIN password (format: DDMMYY) ──────────────────────────────────
-export const CORRECT_PIN = '00'
+export const CORRECT_PIN = '050609'
 
 // ── GIF Capoo dari Giphy ────────────────────────────────────────────
 export const GIFS = {

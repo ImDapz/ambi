@@ -20,7 +20,7 @@ export function buildScreen12() {
 
     <!-- goTo('letter-transition') → screen 13 confetti → our-song -->
     <button class="btn" style="margin-top:20px;"
-            onclick="goTo('letter-transition')">
+            onclick="goTo(10)">
       klik ini &lt;3
     </button>
   </div>`

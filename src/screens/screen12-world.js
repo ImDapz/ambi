@@ -10,14 +10,12 @@ export function buildScreen12() {
     </div>
 
     <p class="title-big" style="font-size:19px;margin-bottom:10px;">
-      Dirimu sang pelengkap hari
+      my pap pertama aku
     </p>
 
     <p style="font-size:13px;font-weight:600;color:#4a6cb7;text-align:center;
               line-height:1.7;max-width:280px;">
-      Aku merasa bahwa itu melengkapi hariku<br>
-      dan aku selamanya berterimakasih<br>
-      memiliki seorang sepertimu
+      dan terakhir ini, pap pertama dari kamu waktu akhirnya punya kacamata sendiri, kamu ngirimi aku pap ini sambil kasih caption "mampus banyak" sampai sekarang aku masih inget itu wkwk
     </p>
 
     <!-- goTo('letter-transition') → screen 13 confetti → our-song -->

@@ -11,14 +11,15 @@ export function buildScreen9() {
 	              object-fit:cover; object-position: center 30%;">
 	</div>
 
-    <p class="title-big" style="font-size:19px;margin-bottom:10px;">
-      If life is a movie, you are the bestpart
+    <p class="title-big" style="font-size:16px;margin-bottom:10px;">
+   My pap paling favorit
     </p>
 
-    <p style="font-size:13px;font-weight:600;color:#4a6cb7;text-align:center;
+    <p style="font-size:15px;font-weight:600;color:#4a6cb7;text-align:center;S
               line-height:1.7;max-width:280px;">
-      Adegan yang tak akan pernah bosan tuk kuputar ulang dan kenanganya akan kusimpan.
+         Ini pap favorit aku dari kamu, buket bunga risem yang tercantik, termanis, tergemas, terkyut dan terfavorit
     </p>
+
 
     <button class="btn" style="margin-top:22px;" onclick="goTo(11)">
       klik ini &lt;3

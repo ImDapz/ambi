@@ -10,14 +10,13 @@ export function buildScreen11() {
     </div>
 
 	<p class="title-big" style="font-size:19px;margin-bottom:10px;">
-      seorang yang penting lagi favorit
+     my pap favorit kedua
     </p>
 
     <p style="font-size:13px;font-weight:600;color:#4a6cb7;text-align:center;
               line-height:1.7;max-width:280px;">
-      Sampai sekarang, potret tentang kamu<br>
-      masih memiliki tempat khusus<br>
-      di galeri dan ingatanku.
+	nah ni juga favorit aku, sebelum kamu ngasih pap buket itu aku masih inget dimana kamu said sorry karna gada foto buket itu dan ganti nya kamu ngirimi pap ini
+	
     </p>
 
     <button class="btn" style="margin-top:22px;" onclick="goTo(12)">

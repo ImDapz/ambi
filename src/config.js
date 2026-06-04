@@ -1,7 +1,5 @@
 /* =============================================
    config.js — Edit semua konten di sini
-   Tidak perlu buka file lain untuk ganti teks,
-   PIN, GIF, atau playlist.
    ============================================= */
 
 // ── PIN password (format: DDMMYY) ──────────────────────────────────
@@ -18,11 +16,27 @@ export const GIFS = {
   last:     'https://i.pinimg.com/originals/29/4d/93/294d93123bae16823d7eef3c70ee0c31.gif',
 }
 
-// ── Spotify playlist ────────────────────────────────────────────────
+// ── Spotify playlist — format dictionary ────────────────────────────
+// Letakkan file MP3 di folder /public/
+// cover: opsional — kalau null, akan diekstrak otomatis dari tag ID3
+// Kalau ekstrak gagal, fallback ke /cover.jpg
 export const PLAYLIST = [
-  "Bestpart.mp3",
-  "love..mp3"
- ]
+  {
+    file:   'Bestpart.mp3',
+    title:  'Best Part',
+    artist: 'Daniel Caesar ft. H.E.R.',
+    album:  'Freudian',
+    cover:  null,        // null = auto-extract dari ID3
+  },
+  {
+    file:   'love.mp3',
+    title:  'love.',
+    artist: 'wave to earth',
+    album:  '0.1 flaws and all',
+    cover:  null,
+  },
+]
+
 // ── Teks surat / birthday letter ────────────────────────────────────
 export const LETTER_TEXT = `happy sweet seventeen baebae risma
 
@@ -39,21 +53,15 @@ udah itu aja dari aku.
 happy sweet seventeen baebae risma, i love you moree`
 
 // ── Sound — pitch per angka numpad ─────────────────────────────────
-// 5 = base (1.0), naik ke 9, turun ke 0
 export const KEY_PITCH = {
   0: 0.354,
   1: 0.420,
   2: 0.500,
   3: 0.595,
   4: 0.707,
-  5: 1.000,  // ← telephone.mp3 base
+  5: 1.000,
   6: 1.414,
   7: 2.000,
   8: 2.828,
   9: 4.000,
 }
-
-
-
-
-

@@ -6,11 +6,11 @@ export function buildScreen12() {
     <button class="music-btn js-music-btn">🎵</button>
 
     <div class="photo-card">
-    	<img src="/photo3.jpeg" style="width:100%;height:405px;bottom:20px;object-fit:cover;">
+    	<img src="/photo2.jpeg" style="width:100%;height:405px;bottom:20px;object-fit:cover;">
     </div>
 
     <p class="title-big" style="font-size:19px;margin-bottom:10px;">
-      my pap pertama aku
+      My pap pertama aku
     </p>
 
     <p style="font-size:13px;font-weight:600;color:#4a6cb7;text-align:center;

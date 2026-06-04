@@ -6,5 +6,13 @@ export default defineConfig({
     host: true,
     port: 5173,
     allowedHosts: true
+  },
+  build: {
+    rollupOptions: {
+      external: ['react-native-fs']
+    }
+  },
+  optimizeDeps: {
+    exclude: ['jsmediatags']
   }
 })
